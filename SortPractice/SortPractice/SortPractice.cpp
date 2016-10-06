@@ -23,14 +23,14 @@ int main()
 {
 	const int _arrayLength = 10;
 	int _array[_arrayLength] = { 100,152,2,645,75,55,256,989,640,55 };
-	RadixSort _radixSort;
+	RadixIntSort _radixSort;
 
 	PrintArray(_array, &_arrayLength);
 
 	
-	_radixSort.SortInt(_array, &_arrayLength);
+	_radixSort.Sort(_array, &_arrayLength);
 
-
+	PrintArray(_array, &_arrayLength);
 	
 	getchar();
 	return 0;

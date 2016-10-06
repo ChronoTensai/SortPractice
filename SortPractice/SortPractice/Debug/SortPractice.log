@@ -1,4 +1,7 @@
-﻿  SortPractice.cpp
-  RadixSort.cpp
+﻿  RadixSort.cpp
+d:\documents\proyectos\sortpractice\sortpractice\sortpractice\sortpractice\radixsort.cpp(61): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  SortPractice.cpp
   Generating Code...
   SortPractice.vcxproj -> D:\Documents\Proyectos\SortPractice\SortPractice\SortPractice\Debug\SortPractice.exe

@@ -1,40 +1,34 @@
 #pragma once
+
+
 class RadixItem
 {
-public:
-	RadixItem(const int * length)
-	{
-		_arrayValues = new int[*length];
-	}
-	~RadixItem()
-	{
-		delete[] _arrayValues;
-	}
-	void AddItem(int value)
-	{
-		_lastIndexUsed++;
-		_arrayValues[_lastIndexUsed] = value;
-	}
-
-	int GetItem()
-	{
-		int returnValue = _arrayValues[_lastIndexUsed];
-		_lastIndexUsed--;
-		return returnValue;
-	}
-private:
-	int* _arrayValues;
-	int _lastIndexUsed = 0;	
+	public:
+		RadixItem(){}
+		void CreateQueue(const int * length);
+		~RadixItem();	
+		void AddItem(int value);
+		int GetItem();
+		bool IsEmpty() {return isEmpty;}
+	private:
+		//Should better use nodes instead of array
+		int* _arrayValues = nullptr;
+		int _lastIndexPushed = -1;
+		int _lastIndexPoped = 0;
+		bool isEmpty = true;
 };
 
-class RadixSort
+
+class RadixIntSort
 {
+
 public:
-	RadixSort();
-	void SortInt(int* arrayToSort,const int * length);
-	~RadixSort();
+	RadixIntSort() {};
+	void Sort(int* arrayToSort,const int * length);	
+	~RadixIntSort() {};
 private:
-	int Iterances;
-	int getUnit(int iterationTime)
+	static const int INTEGERS_SLOTS = 10;
+	int GetUnit(int currentIteration, int number);
+	int GetNumberOfIterations(int * arrayToSort, const int * length);
 };
 
